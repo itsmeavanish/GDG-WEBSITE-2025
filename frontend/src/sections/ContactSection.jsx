@@ -134,32 +134,45 @@ const ContactSection = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    if (validateForm()) {
-      setIsSubmitting(true);
-      
-      // Simulate form submission
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (validateForm()) {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://gdg-website-2025-oghz.vercel.app/api/auth/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      setSubmitSuccess(true);
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+
       setTimeout(() => {
-        setIsSubmitting(false);
-        setSubmitSuccess(true);
-        
-        // Reset form after submission
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-        
-        // Reset success message after 3 seconds
-        setTimeout(() => {
-          setSubmitSuccess(false);
-        }, 3000);
-      }, 1500);
+        setSubmitSuccess(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Error submitting form:', error.message);
+      alert('Failed to send message. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
     }
-  };
+  }
+};
 
   return (
     <Contact id="contact">

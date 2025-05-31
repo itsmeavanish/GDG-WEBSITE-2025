@@ -194,26 +194,39 @@ const RegisterModal = ( {event, onClose} ) => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    if (validateStep(step)) {
-      setIsSubmitting(true);
-      
-      // Simulate form submission
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setSubmitted(true);
-      }, 1500);
-    }
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleModalClick = (e) => {
-    // Only close if clicking the overlay, not the modal content
-    if (e.target.classList.contains('modal-overlay')) {
-      onClose();
+  if (validateStep(step)) {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://gdg-website-2025-oghz.vercel.app/api/auth/registerforevent', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          eventId: event?.id,
+          ...formData
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to register');
+      }
+
+      const data = await response.json(); 
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Registration error:', error);
+      alert('An error occurred during registration. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
-  };
+  }
+};
+
 
   return (
     <ModalOverlay onClick={handleModalClick} className='modal-overlay'>
