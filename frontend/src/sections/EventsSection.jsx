@@ -94,18 +94,17 @@ const ExploreButton = styled.button`
 
 const eventsData = [
   {
-    id: '1',
-    title: 'Google I/O Extended MMMUT 2025',
-    description:
-      "Join us for Google I/O Extended, where we'll watch and discuss the keynote and sessions from Google I/O 2025. Network with fellow developers and learn about the latest Google technologies.",
+    id: '16',
+    title: 'Induction 2025 – Your GDG Journey Begins',
+    description: 'Join us for the GDG MMMUT Induction 2025, where new members are welcomed into our vibrant tech community. Meet the team, discover upcoming events, and explore how you can learn, build, and collaborate with GDG On Campus MMMUT.',
     date: '2025-06-15',
-    time: '10:00 AM - 5:00 PM',
+    time: '10:00 AM - 1:00 PM',
     location: 'MMMUT Campus, Gorakhpur',
-    image:
-      'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     status: 'upcoming',
-    tags: ['Conference', 'Google I/O', 'Android', 'Web'],
+    tags: ['Induction', 'Community', 'Networking', 'Tech'],
     attendees: 250,
+
     speakers: [
       {
         name: 'Dr. Aisha Kumar',

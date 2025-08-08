@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useAuth } from '../../contexts/useAuth';
 
 
-const Countdown=styled(motion.div)`
+const Countdown = styled(motion.div)`
   
     background-color: ${({ theme }) => theme.colors.background.primary}; /* Equivalent to bg-gray-50 */
   color: ${({ theme }) => theme.colors.text.primary}; /* Optional dark mode handling */
@@ -45,7 +45,7 @@ const Countdown=styled(motion.div)`
   margin-top: 1.5rem; 
   }
 `
-const CountItem=styled.div`
+const CountItem = styled.div`
  font-size: 1.875rem; /* text-3xl */
   font-weight: 700; /* font-bold */
   color: ${({ theme }) => theme.colors.text.primary}; /* text-gray-800 */
@@ -55,30 +55,30 @@ const CountItem=styled.div`
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow-sm */
 
   ${({ theme }) =>
-    theme==="dark" &&
+    theme === "dark" &&
     `
     color: ${theme.colors.text.primary || '#ffffff'}; 
     background-color: ${theme.colors.background.secondary || '#2d3748'}; /* dark:bg-dark-300 */
   `}
 `
-const Label=styled.div`
+const Label = styled.div`
   font-size: 0.75rem; /* text-xs */
   margin-top: 0.25rem; /* mt-1 */
   color: ${({ theme }) => theme.colors.text.secondary || '#4b5563'}; /* text-gray-600 */
 
   ${({ theme }) =>
-    theme==="dark" &&
+    theme === "dark" &&
     `
     color: ${theme.colors.text.tertiary || '#9ca3af'}; /* dark:text-gray-400 */
   `}
 `
-const NextEventCountdown= ({ event,setClose }) => {
+const NextEventCountdown = ({ event, setClose }) => {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const {onEvent}=useAuth()
+  const { onEvent } = useAuth()
   useEffect(() => {
     const calculateTimeLeft = () => {
       const difference = new Date(event?.date).getTime() - new Date().getTime();
-      
+
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -97,7 +97,7 @@ const NextEventCountdown= ({ event,setClose }) => {
     return () => clearInterval(timer);
   }, [event?.date]);
 
-  function handleClick(){
+  function handleClick() {
     onEvent(event);
     setClose(false)
   }
@@ -108,20 +108,20 @@ const NextEventCountdown= ({ event,setClose }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div style={{padding: "2rem"}}>
+      <div style={{ padding: "2rem" }}>
         <h3 >Next Event Countdown</h3>
         <h4>{event?.title}</h4>
-        
+
         <div className="items">
           <CountdownItem value={timeLeft.days} label="Days" />
           <CountdownItem value={timeLeft.hours} label="Hours" />
           <CountdownItem value={timeLeft.minutes} label="Minutes" />
           <CountdownItem value={timeLeft.seconds} label="Seconds" />
         </div>
-        
-        <div style={{marginTop:"1.5rem"}}>
-          <button className="btn-primary" style={{width:"full"}} onClick={handleClick}>
-            Register Now
+
+        <div style={{ marginTop: "1.5rem" }}>
+          <button disabled className="btn-primary" style={{ width: "full" }} onClick={handleClick}>
+            Coming Soon
           </button>
         </div>
       </div>
@@ -130,8 +130,8 @@ const NextEventCountdown= ({ event,setClose }) => {
 };
 
 
-const CountdownItem= ({ value, label }) => (
-  <div style={{display:"flex",flexDirection:"column"}}>
+const CountdownItem = ({ value, label }) => (
+  <div style={{ display: "flex", flexDirection: "column" }}>
     <CountItem className="text-3xl font-bold text-gray-800 dark:text-white bg-white dark:bg-dark-300 rounded-lg py-3 px-1 shadow-sm">
       {value}
     </CountItem>

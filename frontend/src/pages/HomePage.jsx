@@ -11,6 +11,7 @@ import SponsorsSection from '../sections/SponsorsSection';
 import EventsSection from '../sections/EventsSection';
 import ContactSection from '../sections/ContactSection';
 import "../styles/Hero.css"
+import { PreviousEventsSection } from '../sections/PreviousEventsSection';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 const HomePageContainer = styled.div`
@@ -58,7 +59,8 @@ const HomePage = () => {
       </motion.div>
       <AboutSection />
       <EventsSection />
-      <WinnersSection />
+      {/* <WinnersSection /> */}
+      <PreviousEventsSection/>
       <SponsorsSection />
       <ContactSection />
       

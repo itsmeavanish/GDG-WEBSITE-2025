@@ -172,65 +172,76 @@ const RegisterButton = styled(motion.button)`
 const eventsData = [
   {
     id: 1,
-    title: " Hackblitz",
+    title: "Orientation 2025 – GDG MMMUT",
+    type: "Event",
+    date: "January 20, 2025",
+    time: "11:00 AM - 1:00 PM",
+    location: "Auditorium, MMMUT",
+    capacity: "200 participants",
+    description: "Kickstart your journey with GDG MMMUT! Meet the team, learn about our vision, explore exciting upcoming events, and discover how you can be part of our tech-driven community.",
+    image: "https://ik.imagekit.io/guxtd3sah/IMG_0710.HEIC?updatedAt=1754648851818"
+},
+{
+    id: 2,
+    title: "Hackblitz",
     type: "Event",
     date: "March 15, 2024",
     time: "10:00 AM - 4:00 PM",
     location: "CS Department, MMMUT",
     capacity: "50 participants",
-    description: "Build innovative solutions using different technologies mainly providing solutions to real world challenges!",
-    image: "https://images.pexels.com/photos/7504837/pexels-photo-7504837.jpeg"
-  },
-  {
-    id: 2,
-    title: "Web Devlopment",
+    description: "A high-energy hackathon where innovators and problem-solvers collaborate to build impactful tech solutions for real-world challenges.",
+    image: "https://ik.imagekit.io/vkajf4kza/IMG_0376.JPG?updatedAt=1754639902883"
+},
+{
+    id: 3,
+    title: "Web Development",
     type: "Workshop",
     date: "April 1-2, 2024",
     time: "3 days",
     location: "Online",
     capacity: "100 teams",
-    description: "Learn to build beautiful cross-platform web applications with basics for web devlopment. Perfect for beginners!",
-    image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg"
-  },
-  {
-    id: 3,
+    description: "A beginner-friendly workshop introducing HTML, CSS, and JavaScript to help you start building interactive, responsive web applications.",
+    image: "https://ik.imagekit.io/vkajf4kza/DSC_0238%20(1)_2.jpg?updatedAt=1754639916150"
+},
+{
+    id: 4,
     title: "Machine Learning Webinar",
-    type: "webinar",
+    type: "Webinar",
     date: "March 20, 2024",
     time: "6:00 PM - 8:00 PM",
     location: "Online",
     capacity: "200 participants",
-    description: "Deep dive into TensorFlow and machine learning concepts with industry experts.",
-    image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg"
-  },
-  {
-    id: 4,
-    title: "App Devlopment",
+    description: "An expert-led session exploring machine learning fundamentals, TensorFlow basics, and real-world AI applications.",
+    image: "https://ik.imagekit.io/vkajf4kza/DSC_0190.JPG?updatedAt=1754639915604"
+},
+{
+    id: 5,
+    title: "App Development",
     type: "Workshop",
     date: "March 25, 2024",
     time: "5:00 PM - 7:00 PM",
     location: "Seminar Hall, MMMUT",
     capacity: "75 participants",
-    description: "Network with fellow App developers while learning and sharing your experiences.",
-    image: "https://images.pexels.com/photos/7014337/pexels-photo-7014337.jpeg"
-  },
-  {
-    id: 5,
-    title: "Google Cloud Study Jam",
-    type: "workshop",
+    description: "A hands-on workshop on creating mobile applications, covering UI/UX design, development, and deployment strategies.",
+    image: "https://ik.imagekit.io/vkajf4kza/DSC_0428_1.webp?updatedAt=1754639910287"
+},
+{
+    id: 6,
+    title: "Native Nexus",
+    type: "Workshop",
     date: "April 10, 2024",
     time: "2:00 PM - 6:00 PM",
     location: "Online",
-    capacity: "150 participants",
-    description: "Hands-on workshop to learn Google Cloud Platform fundamentals.",
-    image: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg"
-  }
+    capacity: "250+ participants",
+    description: "An immersive workshop focused on mastering Google Cloud Platform services and integrating them into real-world applications.",
+    image: "https://ik.imagekit.io/vkajf4kza/DSC_0271_1.jpg?updatedAt=1754639914878"
+}
 ];
 
 // Memoized Subcomponents
 const SectionHeader = () => (
   <SectionHeaderWrapper>
-    <SectionTitle>Upcoming Events</SectionTitle>
+    <SectionTitle>Recent Events</SectionTitle>
     <SectionDescription>
       Join us for exciting events, workshops, and meetups. Learn from experts,
       network with peers, and stay updated with the latest in technology.
@@ -256,14 +267,14 @@ const EventCard = ({ event, onRegister }) => {
       </EventImage>
       <EventContent>
         <EventTitle>{event.title}</EventTitle>
-        <EventInfo>
+        {/* <EventInfo>
           <FaCalendar />
           <span>{event.date}</span>
         </EventInfo>
         <EventInfo>
           <FaClock />
           <span>{event.time}</span>
-        </EventInfo>
+        </EventInfo> */}
         <EventInfo>
           <FaMapMarkerAlt />
           <span>{event.location}</span>
@@ -273,13 +284,13 @@ const EventCard = ({ event, onRegister }) => {
           <span>{event.capacity}</span>
         </EventInfo>
         <EventDescription>{event.description}</EventDescription>
-        <RegisterButton
+        {/* <RegisterButton
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => onRegister(event)}
         >
           Register Now
-        </RegisterButton>
+        </RegisterButton> */}
       </EventContent>
     </EventCardContainer>
   );
@@ -288,7 +299,7 @@ const EventCard = ({ event, onRegister }) => {
 const MemoizedEventCard = memo(EventCard);
 
 // Main Component
-const PreviousEventsSection = () => {
+export const PreviousEventsSection = () => {
   const [close, setClose] = useState(true);
   const [activeEvent, setActiveEvent] = useState(null);
   const sectionRef = useRef(null);

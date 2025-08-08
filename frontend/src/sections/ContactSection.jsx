@@ -196,7 +196,7 @@ const ContactSection = () => {
         
         <ContactGrid>
           <Info className="contact-info">
-            <h3>Contact Information</h3>
+            <h3>Contact GDG On Campus MMMUT</h3>
             
             <div className="contact-method">
               <div className="contact-icon">
@@ -204,7 +204,7 @@ const ContactSection = () => {
               </div>
               <div className="contact-details">
                 <h4>Email Us</h4>
-                <a href="mailto:gdg.mmmut@gmail.com">gdg.mmmut@gmail.com</a>
+                <a href="mailto:mmmutdsc@gmail.com">mmmutdsc@gmail.com</a>
               </div>
             </div>
             
@@ -214,7 +214,7 @@ const ContactSection = () => {
               </div>
               <div className="contact-details">
                 <h4>Visit Us</h4>
-                <p>MMMUT, Gorakhpur, Uttar Pradesh, India</p>
+                <p>MMMUT Campus, Gorakhpur, Uttar Pradesh, India</p>
               </div>
             </div>
             
@@ -224,23 +224,23 @@ const ContactSection = () => {
               </div>
               <div className="contact-details">
                 <h4>Join Community</h4>
-                <p>Google Developers Group</p>
+                <a href="https://gdg.community.dev/gdg-on-campus-madan-mohanmalaviya-university-of-technology-gorakhpur-india/ a"> GDG On Campus MMMUT</a>
               </div>
             </div>
             
             <div className="quick-links">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="#events">Upcoming Events</a></li>
-                <li><a href="#about">About GDG</a></li>
-                <li><a href="https://developers.google.com" target="_blank" rel="noopener noreferrer">Google Developers</a></li>
-                <li><a href="https://gdg.community.dev" target="_blank" rel="noopener noreferrer">GDG Community Platform</a></li>
+                <li><a href="/events">Upcoming Events</a></li>
+                <li><a href="#about">About GDG On Campus MMMUT</a></li>
+                <li><a href="https://gdg.community.dev/" target="_blank" rel="noopener noreferrer">Google Developer Groups</a></li>
+                <li><a href="https://developers.google.com/community" target="_blank" rel="noopener noreferrer">GDG Community Page</a></li>
               </ul>
             </div>
           </Info>
           
           <ContactContainer className="contact-form-container">
-            <h3>Send Us a Message</h3>
+            <h3>We’d Love to Hear from You</h3>
             
             {submitSuccess && (
               <div className="success-message">

@@ -16,14 +16,14 @@ width: fit-content;
 `
 export default function Logo() {
   return (
-    <Symbol href='#home' className='logo'>
+    <Symbol href='/' className='logo'>
                 <div className="logo-colors">
                   <span className="logo-blue"></span>
                   <span className="logo-red"></span>
                   <span className="logo-yellow"></span>
                   <span className="logo-green"></span>
                 </div>
-                <span className="logo-text">GDG MMMUT</span>
+                <span className="logo-text">GDG On Campus MMMUT</span>
     </Symbol>
   )
 }

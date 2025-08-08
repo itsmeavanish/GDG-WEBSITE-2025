@@ -12,7 +12,7 @@ exports.connect = async () => {
   } catch (error) {
     console.error("DB Connection Issues:");
     console.error(error);
-    throw error; // Rethrow the error to handle it upstream if needed
+    throw error;
   }
 };
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/Hero.css';
+import gdgGif from '../../public/google_sticker_3.gif'
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -16,20 +17,21 @@ const HeroSection = () => {
         <div className={`hero-content ${isVisible ? 'visible' : ''}`}>
           <div className="hero-text">
             <h1>Google Developer Group</h1>
-            <h2>MMMUT Chapter</h2>
-            <p>Connect. Learn. Grow. Join our tech community and be a part of something extraordinary.</p>
+            <h2>on Campus MMMUT</h2>
+            <p>Developing Together a Better Tomorrow</p>
             
           </div>
           
           <div className="hero-image">
-            <div className="rotating-cube">
+            {/* <div className="rotating-cube">
               <div className="cube-face front">G</div>
               <div className="cube-face back">G</div>
               <div className="cube-face right">D</div>
               <div className="cube-face left">I/O</div>
               <div className="cube-face top">DEV</div>
               <div className="cube-face bottom">TECH</div>
-            </div>
+            </div> */}
+            <img src={gdgGif} alt="GDG logo animation" />
           </div>
         </div>
 

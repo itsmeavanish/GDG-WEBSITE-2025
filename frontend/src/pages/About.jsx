@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Code, Globe, Users, Lightbulb, Network } from 'lucide-react';
+import { Code, Globe, Users, Lightbulb, Network, Github } from 'lucide-react';
 import styled from 'styled-components';
 import '../styles/About.css';
 
@@ -180,7 +180,7 @@ const About = () => {
       description: 'Focus on the future of decentralized technologies.',
     },
     {
-      icon: <Network size={36} />,
+      icon: <Github size={36} />,
       title: 'Open Source & Cloud Computing',
       description: 'Harness the power of open-source tools and scalable cloud solutions.',
     },
@@ -190,7 +190,7 @@ const About = () => {
     <Aboutid className="about">
       <Container>
         <div ref={sectionRef} className="about-header animate-on-scroll">
-          <h2 className="section-title">About GDG MMMUT</h2>
+          <h2 className="section-title">About GDG on Campus MMMUT</h2>
           <p className="about-description">
             Founded on 26th September 2020 by our visionary alumnus, Abhishek Kumar Yadav, GDG MMMUT has grown from its roots as Developer Student Clubs (DSC) under the Google Developers Program to the largest developer community in our campus and region. With a mission to drive innovation, promote technology, and empower skill development, we are a thriving hub for tech enthusiasts committed to shaping the future of technology.
           </p>
@@ -214,7 +214,7 @@ const About = () => {
 
         <AboutStats>
           <div className="stat-card">
-            <span className="stat-number">2000+</span>
+            <span className="stat-number">1000+</span>
             <span className="stat-label">Community Members</span>
           </div>
           <div className="stat-card">
@@ -222,12 +222,16 @@ const About = () => {
             <span className="stat-label">Events Organized</span>
           </div>
           <div className="stat-card">
-            <span className="stat-number">100+</span>
+            <span className="stat-number">10+</span>
             <span className="stat-label">Speakers</span>
           </div>
           <div className="stat-card">
+            <span className="stat-number">2+</span>
+            <span className="stat-label">Hackathons</span>
+          </div>
+          <div className="stat-card">
             <span className="stat-number">10+</span>
-            <span className="stat-label">Years Active</span>
+            <span className="stat-label">Workshops</span>
           </div>
         </AboutStats>
       </Container>

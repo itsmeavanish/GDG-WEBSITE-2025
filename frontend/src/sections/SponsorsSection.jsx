@@ -231,7 +231,7 @@ const SponsorsSection = () => {
     <SponsorsSectionContainer id="sponsors" className="animate-section">
       <SectionContent ref={sectionRef}>
         <SectionHeader>
-          <SectionTitle>Our Sponsors</SectionTitle>
+          <SectionTitle>Our Previous Sponsors</SectionTitle>
           <SectionDescription>
             We're proud to partner with leading technology companies who share our vision of fostering innovation and learning in the developer community.
           </SectionDescription>

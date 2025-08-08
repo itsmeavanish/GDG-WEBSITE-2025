@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import gdgGif from '../../public/google_sticker_3.gif'
 import { motion } from 'framer-motion';
 import { fetchEvents } from '../utils/eventService';
 import NextEventCountdown from '../components/events/NextEventCountdown';
@@ -10,18 +10,18 @@ import '../styles/Hero.css';
 import BackgroundParticles from '../components/BackgroundParticles';
 import RegisterModal from '../components/RegisterForm';
 import { useAuth } from '../contexts/useAuth';
-const Section=styled.section`
+const Section = styled.section`
 margin-top: 4rem;
 position: relative;
 overflow: hidden;
 `
-const Container=styled.div`
+const Container = styled.div`
 padding: 2rem 1rem 1rem 1rem;
 h2{
   font-size: 2.25rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-color: ${({theme})=>theme.colors.text.primary};
+color: ${({ theme }) => theme.colors.text.primary};
   @media (min-width: 768px) {
     font-size: 3rem; 
   }
@@ -38,7 +38,7 @@ color: ${({theme})=>theme.colors.text.primary};
   margin: 0 auto; /* Equivalent to mx-auto */
   
   /* Dark mode styles */
-  ${({ theme }) => theme.name==="dark" && `
+  ${({ theme }) => theme.name === "dark" && `
     color: ${theme.colors.text.tertiary}; /* Equivalent to dark:text-gray-300 */
   `}
   }
@@ -71,14 +71,14 @@ color: ${({theme})=>theme.colors.text.primary};
 }
 
 `
-export default function Events(){
-  const {activeEvent}=useAuth()
-const [events, setEvents] = useState([]);
-const [filteredEvents, setFilteredEvents] = useState([]);
-const [activeFilter, setActiveFilter] = useState('upcoming');
-const [isLoading, setIsLoading] = useState(true);
-const [close,setclose]=useState(true);
-const [currentevent, setCurrentEvent] = useState(activeEvent);
+export default function Events() {
+  const { activeEvent } = useAuth()
+  const [events, setEvents] = useState([]);
+  const [filteredEvents, setFilteredEvents] = useState([]);
+  const [activeFilter, setActiveFilter] = useState('upcoming');
+  const [isLoading, setIsLoading] = useState(true);
+  const [close, setclose] = useState(true);
+  const [currentevent, setCurrentEvent] = useState(activeEvent);
   useEffect(() => {
     const getEvents = async () => {
       setIsLoading(true);
@@ -95,12 +95,12 @@ const [currentevent, setCurrentEvent] = useState(activeEvent);
 
     getEvents();
   }, []);
-  useEffect(()=>{
+  useEffect(() => {
     setCurrentEvent(activeEvent);
-  },[activeEvent]);
-  function handleClose(){
-        setclose(true);
-    }
+  }, [activeEvent]);
+  function handleClose() {
+    setclose(true);
+  }
   const handleFilterChange = (filter) => {
     setActiveFilter(filter);
     setFilteredEvents(events.filter(event => event.status === filter));
@@ -109,9 +109,9 @@ const [currentevent, setCurrentEvent] = useState(activeEvent);
   const getNextEvent = () => {
     const upcomingEvents = events.filter(event => event.status === 'upcoming');
     if (upcomingEvents.length === 0) return null;
-    
+
     // Sort by date and get the closest one
-    return upcomingEvents.sort((a, b) => 
+    return upcomingEvents.sort((a, b) =>
       new Date(a.date).getTime() - new Date(b.date).getTime()
     )[0];
   };
@@ -119,74 +119,68 @@ const [currentevent, setCurrentEvent] = useState(activeEvent);
   const nextEvent = getNextEvent();
   return (
     <>
-    <BackgroundParticles />
-    <Section id="events">
-      <Container className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{ textAlign: 'center', marginBottom: '2rem' }}
-        >
-          <h2 >
-            Upcoming &amp; Past Events
-          </h2>
-          <div className="div1"></div>
-          <p >
-            Join us at our events to learn, network, and grow with the Google Developer community at MMMUT.
-          </p>
-        </motion.div>
-
-        <div className="div2">
+      <BackgroundParticles />
+      <Section id="events">
+        <Container className="container-custom">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{ textAlign: 'center', marginBottom: '2rem' }}
           >
-            <div style={{position:"sticky",top:"6rem"}}>
-              {nextEvent && (
-                <NextEventCountdown event={nextEvent} setclose={setclose} />
-              )}
+            <h2 >
+              Upcoming &amp; Past Events
+            </h2>
+            <div className="div1"></div>
+            <p >
+              Join us at our events to learn, network, and grow with the Google Developer community at MMMUT.
+            </p>
+          </motion.div>
 
-              <motion.div  initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            style={{marginTop:"6rem",marginLeft:"4rem", height:"10rem", width:"10rem"}}>
-                <div className="hero-image,">
-               <div className="rotating-cube">
-                 <div className="cube-face front">G</div>
-                 <div className="cube-face back">G</div>
-                 <div className="cube-face right">D</div>
-                 <div className="cube-face left">I/O</div>
-                 <div className="cube-face top">DEV</div>
-                 <div className="cube-face bottom">TECH</div>
-               </div>
+          <div className="div2">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div style={{ position: "sticky", top: "6rem" }}>
+                {nextEvent && (
+                  <NextEventCountdown event={nextEvent} setclose={setclose} />
+                )}
+
+                <motion.div initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 2, delay: 1.5 }}
+                >
+                  <div className="lg:h-[40rem] lg:w-[20rem] hidden lg:block">
+                    <img src={gdgGif} alt="GDG logo animation" />
+                  </div>
+
+                </motion.div>
               </div>
-              </motion.div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            style={{gridColumn: "span 2 / span 2" }}
-          >
-            <EventFilters
-              activeFilter={activeFilter} 
-              onFilterChange={handleFilterChange} 
-            />
-            
-            <EventsList
-              events={filteredEvents} 
-              isLoading={isLoading} 
-              setclose={setclose}
-            />
-          </motion.div>
-        </div>
-      </Container>
-    </Section>
-    {!close && <RegisterModal event={currentevent} onClose={handleClose} />}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              style={{ gridColumn: "span 2 / span 2" }}
+            >
+              <EventFilters
+                activeFilter={activeFilter}
+                onFilterChange={handleFilterChange}
+              />
+
+              <EventsList
+                events={filteredEvents}
+                isLoading={isLoading}
+                setclose={setclose}
+              />
+            </motion.div>
+          </div>
+        </Container>
+      </Section>
+      {!close && <RegisterModal event={currentevent} onClose={handleClose} />}
     </>
   );
 };

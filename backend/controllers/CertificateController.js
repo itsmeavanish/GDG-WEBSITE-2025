@@ -3,6 +3,8 @@ const Certificate = require("../models/CertificateSchema.js");
 const getCertificateBySerial = async (req, res) => {
   try {
     const { serial } = req.params;
+    console.log(serial);
+    
     const cert = await Certificate.findOne({ serialNumber: serial });
 
     if (!cert || !cert.verified) {

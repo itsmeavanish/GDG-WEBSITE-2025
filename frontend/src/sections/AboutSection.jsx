@@ -160,7 +160,7 @@ const AboutSection = () => {
     <AboutSectionContainer id="about" className="animate-section">
       <AboutWrapper>
         <AboutContent>
-          <SectionTitle>About GDG MMMUT</SectionTitle>
+          <SectionTitle>About  GDG On Campus MMMUT</SectionTitle>
           <AboutText>
             Google Developer Group MMMUT is a local community of developers, designers, and technology enthusiasts
             who are interested in Google's technologies and platforms. Our mission is to create a vibrant and
@@ -197,7 +197,7 @@ const AboutSection = () => {
               <StatNumber $color="red">
                 {
                   // Animated counter would be implemented with GSAP in a real app
-                  "50+"
+                  "40+"
                 }
               </StatNumber>
               <StatLabel>Events Organized</StatLabel>
@@ -212,7 +212,7 @@ const AboutSection = () => {
               <StatNumber $color="green">
                 {
                   // Animated counter would be implemented with GSAP in a real app
-                  "20+"
+                  "10+"
                 }
               </StatNumber>
               <StatLabel>Speakers</StatLabel>
@@ -242,7 +242,7 @@ const AboutSection = () => {
               <StatNumber $color="blue">
                 {
                   // Animated counter would be implemented with GSAP in a real app
-                  "5+"
+                  "2+"
                 }
               </StatNumber>
               <StatLabel>Hackathons</StatLabel>

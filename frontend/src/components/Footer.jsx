@@ -6,7 +6,11 @@ import {
   FaLinkedin, 
   FaDiscord, 
   FaYoutube,
-  FaArrowUp 
+  FaArrowUp,
+  FaInstagram,  
+  FaFacebook,
+  FaWhatsapp,
+  FaTelegram
 } from 'react-icons/fa';
 import Logo from './Logo';
 const FooterContainer = styled.footer`
@@ -132,13 +136,13 @@ const Footer = () => {
             <Logo />
             </FooterTitle>
           <p>
-            Google Developer Group MMMUT is a community of passionate developers, 
+            Google Developer Group On Campus MMMUT is a community of passionate developers, 
             designers, and enthusiasts who come together to learn, share, and grow 
             in technology.
           </p>
-          <SocialLinks>
+          <SocialLinks className='flex flex-wrap justify-center items-center'>
             <SocialIcon 
-              href="https://twitter.com" 
+              href="https://x.com/gdgmmmut" 
               target="_blank" 
               whileHover={{ y: -3 }}
               aria-label="Twitter"
@@ -146,7 +150,7 @@ const Footer = () => {
               <FaTwitter />
             </SocialIcon>
             <SocialIcon 
-              href="https://github.com" 
+              href="https://github.com/gdgmmmut" 
               target="_blank" 
               whileHover={{ y: -3 }}
               aria-label="GitHub"
@@ -154,7 +158,7 @@ const Footer = () => {
               <FaGithub />
             </SocialIcon>
             <SocialIcon 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/company/gdgmmmut/" 
               target="_blank" 
               whileHover={{ y: -3 }}
               aria-label="LinkedIn"
@@ -162,7 +166,7 @@ const Footer = () => {
               <FaLinkedin />
             </SocialIcon>
             <SocialIcon 
-              href="https://discord.com" 
+              href="https://discord.gg/4rp8Jw7" 
               target="_blank" 
               whileHover={{ y: -3 }}
               aria-label="Discord"
@@ -170,23 +174,53 @@ const Footer = () => {
               <FaDiscord />
             </SocialIcon>
             <SocialIcon 
-              href="https://youtube.com" 
+              href="https://www.youtube.com/channel/UCJy6ERxC0x4xSmpS3sd2FIg/" 
               target="_blank" 
               whileHover={{ y: -3 }}
               aria-label="YouTube"
             >
               <FaYoutube />
             </SocialIcon>
+            <SocialIcon 
+              href="https://www.instagram.com/gdgmmmut/" 
+              target="_blank" 
+              whileHover={{ y: -3 }}
+              aria-label="Instagram"
+            >
+              <FaInstagram />
+            </SocialIcon>
+            <SocialIcon 
+              href="https://www.facebook.com/gdscmmmut/" 
+              target="_blank" 
+              whileHover={{ y: -3 }}
+              aria-label="Facebook"
+            >
+              <FaFacebook />
+            </SocialIcon>
+            <SocialIcon 
+              href="https://whatsapp.com/channel/0029VaUC9xeIiRoysh771f3Y" 
+              target="_blank" 
+              whileHover={{ y: -3 }}
+              aria-label="Whatsapp"
+            >
+              <FaWhatsapp />
+            </SocialIcon>
+            <SocialIcon 
+              href="https://t.me/gdgmmmut" 
+              target="_blank" 
+              whileHover={{ y: -3 }}
+              aria-label="Telegram"
+            >
+              <FaTelegram />
+            </SocialIcon>
           </SocialLinks>
         </FooterSection>
         
         <FooterSection>
           <FooterTitle>Links</FooterTitle>
-          <FooterLink href="#">About GDG</FooterLink>
-          <FooterLink href="#">Upcoming Events</FooterLink>
-          <FooterLink href="#">Resources</FooterLink>
-          <FooterLink href="#">Projects</FooterLink>
-          <FooterLink href="#">Become a Member</FooterLink>
+          <FooterLink href="/about">About GDG</FooterLink>
+          <FooterLink href="/event">Upcoming Events</FooterLink>
+          <FooterLink href="https://gdg.community.dev/gdg-on-campus-madan-mohan-malaviya-university-of-technology-gorakhpur-india/" target='_blank'>Become a Community Member</FooterLink>
         </FooterSection>
         
         <FooterSection>
@@ -194,16 +228,15 @@ const Footer = () => {
           <FooterLink href="https://developers.google.com/community/gdg" target="_blank">GDG Program</FooterLink>
           <FooterLink href="https://developers.google.com/womentechmakers" target="_blank">Women Techmakers</FooterLink>
           <FooterLink href="https://developers.google.com/community/experts" target="_blank">Google Developer Experts</FooterLink>
-          <FooterLink href="https://developers.google.com/community/dsc" target="_blank">Developer Student Clubs</FooterLink>
+          <FooterLink href="https://gdg.community.dev/" target="_blank">Google Developer Groups On Campus</FooterLink>
           <FooterLink href="https://developers.google.com/community/accelerators" target="_blank">Google for Startups</FooterLink>
         </FooterSection>
         
         <FooterSection>
           <FooterTitle>Contact Us</FooterTitle>
-          <FooterLink href="mailto:gdg@mmmut.ac.in">gdg@mmmut.ac.in</FooterLink>
-          <FooterLink href="#">MMMUT, Gorakhpur</FooterLink>
+          <FooterLink href="mailto:mmmutdsc@gmail.com">mmmutdsc@gmail.com</FooterLink>
+          <FooterLink href="#">MMMUT Campus, Gorakhpur</FooterLink>
           <FooterLink href="#">Uttar Pradesh, India</FooterLink>
-          <FooterLink href="tel:+910000000000">+91 8874985341</FooterLink>
         </FooterSection>
       </FooterContent>
       

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion, useInView, useScroll } from 'framer-motion';
 import { FaGit, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import Uploadbox from '../../Upload/Uploadbox';
-import {useAuth} from "../contexts/useAuth"
+import { useAuth } from "../contexts/useAuth"
 const TeamSectionContainer = styled.section`
   padding: 6rem 2rem;
   background-color: ${({ theme }) => theme.colors.background.primary};
@@ -91,7 +91,7 @@ const MemberContent = styled.div`
 const RoleBadge = styled.span`
   display: inline-block;
   background-color: ${({ theme, $role }) => {
-    switch($role) {
+    switch ($role) {
       case 'lead': return theme.googleColors.blue.light;
       case 'core': return theme.googleColors.red.light;
       case 'organizer': return theme.googleColors.green.light;
@@ -100,7 +100,7 @@ const RoleBadge = styled.span`
     }
   }};
   color: ${({ theme, $role }) => {
-    switch($role) {
+    switch ($role) {
       case 'lead': return theme.googleColors.blue.darker;
       case 'core': return theme.googleColors.red.darker;
       case 'organizer': return theme.googleColors.green.darker;
@@ -160,11 +160,11 @@ const FilterContainer = styled.div`
 `;
 
 // Dummy team data
-const teamData =[
+const teamData = [
   {
     "id": 1,
     "name": "Avanish Upadhyay",
-    "role": "Web Dev Lead",
+    "role": "Web Dev Team",
     "badge": "Web Developer",
     "year": "2024",
     "image": "https://res.cloudinary.com/dfstpdwih/image/upload/v1747396588/Codehelp/tmp-4-1747396587840.jpg",
@@ -174,23 +174,11 @@ const teamData =[
       "github": "https://github.com/itsmeavanish"
     }
   },
+  
   {
     "id": 2,
-    "name": "Anmol Tomar",
-    "role": "Web Dev Lead",
-    "badge": "Web Developer",
-    "year": "2024",
-    "image": "https://media.licdn.com/dms/image/v2/D5603AQF1BCDvEoRJZw/profile-displayphoto-crop_800_800/B56Zgnixf7HkAM-/0/1753010086392?e=1757548800&v=beta&t=IDNeaYzST-b8KtrbAgQI4uw7G9VUpLX_Wh8-2g9X8K4",
-    "social": {
-      "linkedin": "https://linkedin.com",
-      "twitter": "https://twitter.com",
-      "github": "https://github.com"
-    }
-  },
-  {
-    "id": 3,
     "name": "Aditya Pratap Singh",
-    "role": "Web Dev Lead",
+    "role": "Web Dev Team",
     "badge": "Web Developer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQEa89vnpYSKzg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723404895368?e=1757548800&v=beta&t=aOn0H36gOZyAc-MaRTbdu5pdlENlcoXqyZ9SV7zyPDM",
@@ -200,10 +188,11 @@ const teamData =[
       "github": "https://github.com"
     }
   },
+
   {
-    "id": 4,
+    "id": 3,
     "name": "Ujjwal Gupta",
-    "role": "Web Dev Lead",
+    "role": "Web Dev Team",
     "badge": "Web Developer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQEZ_19pHOlqUA/profile-displayphoto-crop_800_800/B56Zh1xBNaG4AM-/0/1754322443287?e=1757548800&v=beta&t=Kp_N7f1S9ELbxD2ozM_WNllpL2Xm-D9h0LBDiz_9ds8",
@@ -214,22 +203,23 @@ const teamData =[
     }
   },
   {
-    "id": 5,
-    "name": "Saksham Mishra",
-    "role": "Android Dev Lead",
-    "badge": "Android Developer",
+    "id": 4,
+    "name": "Anmol Tomar",
+    "role": "Web Dev Team",
+    "badge": "Web Developer",
     "year": "2024",
-    "image": "https://media.licdn.com/dms/image/v2/D4D03AQFJJlEyHTS5zw/profile-displayphoto-shrink_400_400/B4DZaYK.6JG0Ak-/0/1746309739690?e=1757548800&v=beta&t=PaC9ykbJEQlhiBj0EzVjHVw_oLByBShfekRBPyoZVJ0",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQF1BCDvEoRJZw/profile-displayphoto-crop_800_800/B56Zgnixf7HkAM-/0/1753010086392?e=1757548800&v=beta&t=IDNeaYzST-b8KtrbAgQI4uw7G9VUpLX_Wh8-2g9X8K4",
     "social": {
       "linkedin": "https://linkedin.com",
       "twitter": "https://twitter.com",
       "github": "https://github.com"
     }
   },
+  
   {
     "id": 6,
     "name": "Vikhyat Singh",
-    "role": "Android Dev Lead",
+    "role": "Android Dev Team",
     "badge": "Android Developer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQHmb7KWgJr-oQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1733056715934?e=1757548800&v=beta&t=jjKb4Tf9hBTpF83hBZCjm1Ixi3TLorvKoMNfiXmRAHs",
@@ -242,7 +232,7 @@ const teamData =[
   {
     "id": 7,
     "name": "Vivek Maurya",
-    "role": "Android Dev Lead",
+    "role": "Android Dev Team",
     "badge": "Android Developer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQF4NNPlcjywzA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1703076685260?e=1757548800&v=beta&t=whaauTeZzv5JFZ0WEfIE4493W7Tuttcl-cNHO-PR84A",
@@ -253,9 +243,22 @@ const teamData =[
     }
   },
   {
+    "id": 5,
+    "name": "Saksham Mishra",
+    "role": "Android Dev Team",
+    "badge": "Android Developer",
+    "year": "2024",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQFJJlEyHTS5zw/profile-displayphoto-shrink_400_400/B4DZaYK.6JG0Ak-/0/1746309739690?e=1757548800&v=beta&t=PaC9ykbJEQlhiBj0EzVjHVw_oLByBShfekRBPyoZVJ0",
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "twitter": "https://twitter.com",
+      "github": "https://github.com"
+    }
+  },
+  {
     "id": 8,
     "name": "Anurag Yadav",
-    "role": "Design Lead",
+    "role": "Design Team",
     "badge": "Designer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQFKDYvrS4DpMg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710610293596?e=1757548800&v=beta&t=4rSmedSBlreiwIO1Bt04Huju2nf22ZX-nWFgdbb5Ba4",
@@ -268,7 +271,7 @@ const teamData =[
   {
     "id": 9,
     "name": "Devesh Sharma",
-    "role": "Design Lead",
+    "role": "Design Team",
     "badge": "Designer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQHLboAv1WBDOA/profile-displayphoto-shrink_800_800/B56ZdgLlZpG0Ac-/0/1749665339927?e=1757548800&v=beta&t=2K-igXb45Ra9uccHSdYrFiNUqI2KDDj4NsVfMNhA0cg",
@@ -281,7 +284,7 @@ const teamData =[
   {
     "id": 10,
     "name": "Madhu Yadav",
-    "role": "Design Lead",
+    "role": "Design Team",
     "badge": "Designer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQGdNAk-qG4hKw/profile-displayphoto-shrink_800_800/B56ZSFAiQcHoAc-/0/1737398299316?e=1757548800&v=beta&t=a4n6u5hmzDdXaLY9D9kC8YQ2szpgLYA7R1ql7LeKlm0",
@@ -294,7 +297,7 @@ const teamData =[
   {
     "id": 11,
     "name": "Prateek Khare",
-    "role": "Design Lead",
+    "role": "Design Team",
     "badge": "Designer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQGWwlhXsCP9lw/profile-displayphoto-shrink_800_800/B56ZY._EODGQAk-/0/1744813443460?e=1757548800&v=beta&t=mAYbj1konDnvfCNf01kF-zt-yXUgLFo6IY-YCPNO1Go",
@@ -307,7 +310,7 @@ const teamData =[
   {
     "id": 12,
     "name": "Harshit Singh",
-    "role": "DSA/CP Lead",
+    "role": "DSA/CP Team",
     "badge": "Competitive Programmer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQFbKt16IW12Ag/profile-displayphoto-crop_800_800/B56ZhLiDHXHkAI-/0/1753613875792?e=1757548800&v=beta&t=UiguwgxlfpUIfa7zyz2Va-iDECH-E3WoqDCayFqk_DE",
@@ -320,7 +323,7 @@ const teamData =[
   {
     "id": 13,
     "name": "Shivam Singh",
-    "role": "DSA/CP Lead",
+    "role": "DSA/CP Team",
     "badge": "Competitive Programmer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQGycROglmsqBQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724610837222?e=1757548800&v=beta&t=qwXEG5C4PYO7ga9Gkt1sFfaamAJmoHfy3xJhgB2QlIo",
@@ -333,7 +336,7 @@ const teamData =[
   {
     "id": 14,
     "name": "Kriti Yadav",
-    "role": "DSA/CP Lead",
+    "role": "DSA/CP Team",
     "badge": "Competitive Programmer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQECWBk897J3zw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729078511479?e=1757548800&v=beta&t=eSkzFgmswrjpVirQwGFVdHL9s0uW7BjdRaw_yfczVp0",
@@ -346,7 +349,7 @@ const teamData =[
   {
     "id": 15,
     "name": "Kunal Shrivastav",
-    "role": "DSA/CP Lead",
+    "role": "DSA/CP Team",
     "badge": "Competitive Programmer",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D4D35AQEnfej3Rn6K9w/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1702121778771?e=1754974800&v=beta&t=LUhT2Ib91vAhsPDHAXv3XnjjIIcycUiYhtWkaXYXSIs",
@@ -359,7 +362,7 @@ const teamData =[
   {
     "id": 16,
     "name": "Ananya Gupta",
-    "role": "Content & Management Lead",
+    "role": "Content & Management Team",
     "badge": "Content Creator",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQHSeE_4U6GRrg/profile-displayphoto-shrink_800_800/B56ZOhcq0SGwAc-/0/1733580480295?e=1757548800&v=beta&t=EcvAhwC6cagz-NWne_bt4dOX-ujwoAn-VZTrenrVZuM",
@@ -372,7 +375,7 @@ const teamData =[
   {
     "id": 17,
     "name": "Ananya",
-    "role": "Content & Management Lead",
+    "role": "Content & Management Team",
     "badge": "Content Creator",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQHRMH-HEBPM6A/profile-displayphoto-crop_800_800/B56ZeHZyFuGQAQ-/0/1750323375140?e=1757548800&v=beta&t=aWonbYhBNeGiS49iUIhsudlveptxJD-sHSQnC-hwH80",
@@ -385,7 +388,7 @@ const teamData =[
   {
     "id": 18,
     "name": "Ashutosh Maurya",
-    "role": "Content & Management Lead",
+    "role": "Content & Management Team",
     "badge": "Content Creator",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D4E03AQEdfpiCZDBydg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722261829049?e=1757548800&v=beta&t=xrhwlwVFRImdJp2MKLZUEQhJfDM9X7lt7uZTtyZomb0",
@@ -398,7 +401,7 @@ const teamData =[
   {
     "id": 19,
     "name": "Atishay Kumar Pandey",
-    "role": "Content & Management Lead",
+    "role": "Content & Management Team",
     "badge": "Content Creator",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQGUxCdpq4t6Ww/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729175434582?e=1757548800&v=beta&t=xxIS4ohaFE1sI5nk8tQ3myMOy6oUtSlsoAib6jSttpc",
@@ -411,7 +414,7 @@ const teamData =[
   {
     "id": 20,
     "name": "Jahnawi Agarwal",
-    "role": "Content & Management Lead",
+    "role": "Content & Management Team",
     "badge": "Content Creator",
     "year": "2024",
     "image": "https://media.licdn.com/dms/image/v2/D4E03AQG_P2_fBxurTA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710781652551?e=1757548800&v=beta&t=gmb5_8m7DDg3BOpafOubXHyrRjut_0NayixneRYeDm0",
@@ -422,14 +425,80 @@ const teamData =[
     }
   },
   {
+    "id": 82,
+    "name": "Riya Verma",
+    "role": "AI/ML Team",
+    "badge": "AI/ML Developer",
+    "year": "2024",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQE1Nkp-JtpHgQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728791310476?e=1757548800&v=beta&t=xu3NMkemgret_IVz3cPxVHe7u7VrBTgobayJFkq9gec",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/riya-verma-28b461289/",
+      "twitter": "https://twitter.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": 83,
+    "name": "Snehil Saxena",
+    "role": "AI/ML Team",
+    "badge": "AI/ML Developer",
+    "year": "2024",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQHUAnTVEym1bA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696585718371?e=1757548800&v=beta&t=eqO2eyFAhCnjRyPbnKuAEbiOqk6t2eJU-Av0njN_w18",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/snehil-saxena-b541a4264/",
+      "twitter": "https://twitter.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": 84,
+    "name": "Abhay Chauhan",
+    "role": "AI/ML Team",
+    "badge": "AI/ML Developer",
+    "year": "2024",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQH-4UoEbHxoEg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1714134966046?e=1757548800&v=beta&t=OK0usU7QQeCOBbqci7zOH1VbJKxmy1mgCOU5-v6MdDM",
+    "social": {
+      "linkedin": "https://linkedin.com",
+      "twitter": "https://twitter.com",
+      "github": "https://github.com"
+    }
+  },
+  {
+    "id": 30,
+    "name": "Aastha Gupta",
+    "role": "GDG Lead 2024-25",
+    "position": "GDG Lead",
+    "badge": "Android Developer",
+    "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQFesvWVoJIP6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711456735826?e=1757548800&v=beta&t=JOEvScITNvMTpYdAaAOG293lHxhA69wFObtbl51S8o8",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/aastha5/",
+      "twitter": "",
+      "github": ""
+    }
+  },
+  {
+    "id": 36,
+    "name": "Avinash Mishra",
+    "role": "GDG Co-lead 2024-25",
+    "badge": "Content Creator",
+    "year": "2023",
+    "image": "https://www.linkedin.com/dms/prv/image/v2/D5606AQEt9NHToDRKiQ/messaging-image-720/B56ZiJFVQvH0Ag-/0/1754646533804?m=AQKr-6e5kqoZOAAAAZiJFWN-Qf0OfLi4IsgTonbD7y-BQijYuXDobuN_WuM&ne=1&v=beta&t=MyzPop_byeXdJTqZhA1dWWug5jABnN0dtCH_6qeWweI",
+    "social": {
+      "linkedin": "https://www.linkedin.com/in/avinash-m-321128283/",
+      "twitter": "",
+      "github": ""
+    }
+  },
+  {
     "id": 21,
     "name": "Madhur Pratap Singh Gaur",
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
     "year": "2023",
-    "image":"https://media.licdn.com/dms/image/v2/D5603AQGkEqGr3-BnRQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718821349966?e=1757548800&v=beta&t=3eubEjrzfO9m8m1YUxAMPrBwbT3OSQIQ7TNVtlFrXG0",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQGkEqGr3-BnRQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718821349966?e=1757548800&v=beta&t=3eubEjrzfO9m8m1YUxAMPrBwbT3OSQIQ7TNVtlFrXG0",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/abhay-chauhan29/",
       "twitter": "",
       "github": ""
     }
@@ -439,10 +508,10 @@ const teamData =[
     "name": "Sandeep Singh (ECE)",
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
-    "image":"https://media.licdn.com/dms/image/v2/D5603AQGhTq9LehoOAQ/profile-displayphoto-shrink_400_400/B56ZUjUVFPGsAg-/0/1740054287396?e=1757548800&v=beta&t=J0qOBfMYam5QmcL4BhUeJqKFokFonxnafn4Ve2TV1L0",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQE5rv-CkbJsdQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1729936991258?e=1757548800&v=beta&t=8-lFWJpZLP_8E_wPkvh5t7XgsVzgcYZNRq6Dfcpss6o",
     "year": "2023",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/sandeep-singh-445058254/",
       "twitter": "",
       "github": ""
     }
@@ -453,7 +522,7 @@ const teamData =[
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
     "year": "2023",
-    "image":"https://media.licdn.com/dms/image/v2/D5635AQFKYMQbEvwlxA/profile-framedphoto-shrink_400_400/B56ZYk4fCOGUAc-/0/1744375509778?e=1754974800&v=beta&t=9KS8yVb3ebL-nwMbnWCdeHlMXq5Ys0RvWDYYkvvn9SM",
+    "image": "https://www.linkedin.com/dms/prv/image/v2/D5606AQE4cFA7xQK4Jw/messaging-image-720/B56ZiJNO1zG4AY-/0/1754648605252?m=AQKkCZYWoajXWAAAAZiJUngaL0O7lF1pkWe9jHyyc-nzYE-0P8AUJxeSMIo&ne=1&v=beta&t=l9AJsfHxnoTt2ORxfbh9ZcHXalX_-P4VP-QNMcMdOQ4",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -466,6 +535,7 @@ const teamData =[
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
     "year": "2023",
+    "image": "",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -478,8 +548,9 @@ const teamData =[
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQGP-DzNw3se7A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1727194174971?e=1757548800&v=beta&t=zKZzsVM69LRrvqjzP51OoRZA70rkC7l9zwDh3Q10QAA",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/jyoti-maurya-b9a5b8255/",
       "twitter": "",
       "github": ""
     }
@@ -490,8 +561,9 @@ const teamData =[
     "role": "AI/ML, Cybersecurity & Cloud Team",
     "badge": "AI/ML Enthusiast",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQHKk0n9cvBUCw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715702111001?e=1757548800&v=beta&t=1z-qa_dBanL9EryhBCkcjhre2pUXFP8oPubiGoXe0vg",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/-gayatri-/",
       "twitter": "",
       "github": ""
     }
@@ -502,8 +574,9 @@ const teamData =[
     "role": "AI/ML, Cybersecurity & Cloud Team",
     "badge": "AI/ML Enthusiast",
     "year": "2023",
+    "image": "",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/sayaditya/",
       "twitter": "",
       "github": ""
     }
@@ -514,8 +587,9 @@ const teamData =[
     "role": "AI/ML, Cybersecurity & Cloud Team",
     "badge": "AI/ML Enthusiast",
     "year": "2023",
+    "image": "",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/sarika-kaushal-192a92283/",
       "twitter": "",
       "github": ""
     }
@@ -526,33 +600,23 @@ const teamData =[
     "role": "Android Team",
     "badge": "Android Developer",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D4E03AQFuE_3M_VJg6w/profile-displayphoto-shrink_800_800/B4EZcdE0DJG4Ag-/0/1748539492257?e=1757548800&v=beta&t=PT_9UF7b4cWbmOnv3LJWNvw3g2-NHXb_TtXclCMcr0g",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/aditya-kumar-8a8a51326/",
       "twitter": "",
       "github": ""
     }
   },
-  {
-    "id": 30,
-    "name": "Aastha Gupta",
-    "role": "GDG Lead 2024",
-    "badge": "Android Developer",
-    "year": "2023",
-    "image": "https://media.licdn.com/dms/image/v2/D5603AQFesvWVoJIP6Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711456735826?e=1757548800&v=beta&t=JOEvScITNvMTpYdAaAOG293lHxhA69wFObtbl51S8o8",
-    "social": {
-      "linkedin": "",
-      "twitter": "",
-      "github": ""
-    }
-  },
+  
   {
     "id": 31,
     "name": "Suraj Kasaudhan",
     "role": "Android Team",
     "badge": "Android Developer",
     "year": "2023",
+    "image": "",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/suraj-kasaudhan-ks/",
       "twitter": "",
       "github": ""
     }
@@ -563,6 +627,7 @@ const teamData =[
     "role": "Android Team",
     "badge": "Android Developer",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQGhTq9LehoOAQ/profile-displayphoto-shrink_400_400/B56ZUjUVFPGsAg-/0/1740054287396?e=1757548800&v=beta&t=J0qOBfMYam5QmcL4BhUeJqKFokFonxnafn4Ve2TV1L0",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -575,8 +640,9 @@ const teamData =[
     "role": "Graphics & Creativity Team",
     "badge": "Designer",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQHZcUj2G8J7kg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730605545388?e=1757548800&v=beta&t=1Iz_cDZC6Ko7VGJK5ZnxuwKeVCCWwG_B5udwwOsNB84",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/ritika-yadav-933052258/",
       "twitter": "",
       "github": ""
     }
@@ -587,8 +653,9 @@ const teamData =[
     "role": "Graphics & Creativity Team",
     "badge": "Designer",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQGL1YeL5n6CEw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725198795892?e=1757548800&v=beta&t=McCk0JmAxwzYscvXwKHC9-HjsOfqJseoaNoQ09q5F28",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/divyansh-gupta-0ab55b258/",
       "twitter": "",
       "github": ""
     }
@@ -599,32 +666,23 @@ const teamData =[
     "role": "Content Team",
     "badge": "Content Creator",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQHp4DQEc76QGg/profile-displayphoto-crop_800_800/B56Zg2hfwoHUAI-/0/1753261409085?e=1757548800&v=beta&t=lIVjtgmBe52fsfUB14ZsmP_QVUnULMl6ErP01sFWtHE",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/tanya-batham-69604724b/",
       "twitter": "",
       "github": ""
     }
   },
-  {
-    "id": 36,
-    "name": "Avinash Mishra",
-    "role": "Content Team",
-    "badge": "Content Creator",
-    "year": "2023",
-    "social": {
-      "linkedin": "",
-      "twitter": "",
-      "github": ""
-    }
-  },
+  
   {
     "id": 37,
     "name": "Abhinav Kumar",
     "role": "Event Coordination & Sponsorship Team",
     "badge": "Event Coordinator",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQE84vntBLlVIg/profile-displayphoto-shrink_800_800/B4DZS4SkqwG8Ag-/0/1738258665409?e=1757548800&v=beta&t=Q3goUs_Fr9Mu4xrrEWPoMk_ng6Eyh7ngyuh4BMA38Nk",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/abhinav-kumar-a98b96333/",
       "twitter": "",
       "github": ""
     }
@@ -635,8 +693,9 @@ const teamData =[
     "role": "Event Coordination & Sponsorship Team",
     "badge": "Event Coordinator",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQHuGUBpCjY43g/profile-displayphoto-shrink_800_800/B56Zb93TRcHgAg-/0/1748015860669?e=1757548800&v=beta&t=b3rqh4HnfMlJg5jit5Xl10vbFLqGlLKpZn9bK7Then4",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/nainsi-gupta-549488258/",
       "twitter": "",
       "github": ""
     }
@@ -647,6 +706,7 @@ const teamData =[
     "role": "Event Coordination & Sponsorship Team",
     "badge": "Event Coordinator",
     "year": "2023",
+    "image": "",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -659,8 +719,9 @@ const teamData =[
     "role": "Event Coordination & Sponsorship Team",
     "badge": "Event Coordinator",
     "year": "2023",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQGUN9saFbCaTg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726507968764?e=1757548800&v=beta&t=eCZYCR7abVlB5HE79yMTxLrRw2aR-I3iAoAVvTnXsMc",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/paridhi-mittal-64bb94251/",
       "twitter": "",
       "github": ""
     }
@@ -671,19 +732,20 @@ const teamData =[
     "role": "Event Coordination & Sponsorship Team",
     "badge": "Event Coordinator",
     "year": "2023",
+    "image": "",
     "social": {
       "linkedin": "",
       "twitter": "",
       "github": ""
     }
-  }
-  ,
+  },
   {
     "id": 42,
     "name": "Aastha Singh Sachan",
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
     "year": "2022",
+    "image": "",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -696,8 +758,9 @@ const teamData =[
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/C4D03AQHL7RnuSeWLgA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1655254741573?e=1757548800&v=beta&t=EdqHpbc31F0Mhc_BIaKkHN8jIAP-nvAqQURp5upWZ4Q",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/abhishekcpr/",
       "twitter": "",
       "github": ""
     }
@@ -708,8 +771,9 @@ const teamData =[
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQHbYlZeM5nlzQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711076389936?e=1757548800&v=beta&t=5QSFUdsem9wIHdnJtaX80xsT63UMmQgGN1uJYb_PdrI",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/madhur-vatsal/",
       "twitter": "",
       "github": ""
     }
@@ -720,8 +784,9 @@ const teamData =[
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/C4E03AQEWd-zAjJpTKw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1627226363660?e=1757548800&v=beta&t=wKZbBldujhUqv8lnmwpNFjxNBiNHK8MeQHYYicxumCo",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/saurabh-singh-9ab614218/",
       "twitter": "",
       "github": ""
     }
@@ -732,8 +797,9 @@ const teamData =[
     "role": "Web & Firebase Team",
     "badge": "Web Developer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQHJZxwENs8RnA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693191735474?e=1757548800&v=beta&t=A1HBx-N9uuHeRJYNx_QIdCsXjGcGbwzWTsA5V3BLQs4",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/sonali-rao-25b095228/",
       "twitter": "",
       "github": ""
     }
@@ -741,12 +807,13 @@ const teamData =[
   {
     "id": 47,
     "name": "Anubhav Gupta",
-    "role": "GDG Lead 2023",
+    "role": "GDSC Lead 2023-24",
+    "position": "GDG Lead",
     "badge": "AI/ML Enthusiast",
     "year": "2022",
-    "image":"https://media.licdn.com/dms/image/v2/D5635AQGAoP64cbfVPw/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1736012190248?e=1754974800&v=beta&t=kM8fJhOGIzOB0-ccuz98xdUiXSAyQpXnUtnD6HfbJUs",
+    "image": "https://www.linkedin.com/dms/prv/image/v2/D5606AQEZ0iOpe9WI5g/messaging-image-720/B56ZiIRP1NG0AY-/0/1754632881546?m=AQIjE9I-aU5FEAAAAZiIdwpf2ZcsuvIes_AmJuVFrCqWa__9Monz6amMm3M&ne=1&v=beta&t=2_TGi9RCSw5V1NA6CpAnbWqh7RbHtjKLfcZIEYjEzzE",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/anubhavgupta14/",
       "twitter": "",
       "github": ""
     }
@@ -757,8 +824,9 @@ const teamData =[
     "role": "AI/ML & Cybersecurity Team",
     "badge": "AI/ML Enthusiast",
     "year": "2022",
+    "image": "",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/ritika-agrahari-938278230/",
       "twitter": "",
       "github": ""
     }
@@ -769,8 +837,9 @@ const teamData =[
     "role": "AI/ML & Cybersecurity Team",
     "badge": "AI/ML Enthusiast",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQGTCwvAbM0RwQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1672751241929?e=1757548800&v=beta&t=PY-LLXojwdf2e8_53va3XEKVpVQPVSCtIqWO9gCG5Us",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/satvik-tripathi-3b6579237/",
       "twitter": "",
       "github": ""
     }
@@ -781,8 +850,9 @@ const teamData =[
     "role": "Android Team",
     "badge": "Android Developer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQEpJTCSbCaWxA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1708697064823?e=1757548800&v=beta&t=a9tbI86ZO78b9bYgieOfGKXFxSDEcF-R66AeXrn43hU",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/ankit11verma/",
       "twitter": "",
       "github": ""
     }
@@ -793,8 +863,9 @@ const teamData =[
     "role": "Android Team",
     "badge": "Android Developer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQEIBG9rQb0r7w/profile-displayphoto-shrink_800_800/B56ZT9g2YuHsAs-/0/1739420037396?e=1757548800&v=beta&t=_pr2UdYB9TjIOeP178beYPqqkAhVJ04_T7XnHcs_zOc",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/devansh-tripathi-4150aa225/",
       "twitter": "",
       "github": ""
     }
@@ -805,8 +876,9 @@ const teamData =[
     "role": "Android Team",
     "badge": "Android Developer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQFYYBEkxwJ_4Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731478767702?e=1757548800&v=beta&t=InJmkJaEXc0tHyHuteQ114ObCjPofC3IJzjvSxrYKFw",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/hellosarthak/",
       "twitter": "",
       "github": ""
     }
@@ -817,8 +889,9 @@ const teamData =[
     "role": "Graphics & Creativity Team",
     "badge": "Designer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQFYaQcuOPRB8Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699551727970?e=1757548800&v=beta&t=6-a6Xn5bZm6vN7eGd8wTc-k6YOgsFYT-pWfoZKJS9vY",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/aniket-chaudhary98/",
       "twitter": "",
       "github": ""
     }
@@ -829,8 +902,9 @@ const teamData =[
     "role": "Graphics & Creativity Team",
     "badge": "Designer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQFlj-Se27nypw/profile-displayphoto-shrink_800_800/B56ZY7ZeGEGsAc-/0/1744753255735?e=1757548800&v=beta&t=VIpifpUSF7bOpdQ_Ddo9vMUOJyzwCk6i_4B8PDQU7CE",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/atul1510/",
       "twitter": "",
       "github": ""
     }
@@ -841,8 +915,9 @@ const teamData =[
     "role": "Graphics & Creativity Team",
     "badge": "Designer",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQHAKOzv7o18HQ/profile-displayphoto-shrink_800_800/B56ZbTwjQDGsAk-/0/1747309452855?e=1757548800&v=beta&t=Jsi5TXbIQSuqq4Ns4Wmp3EfBPvWjNRHx3S_MAIoYdXg",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/sumit-kumar-bbb38b230/",
       "twitter": "",
       "github": ""
     }
@@ -853,6 +928,7 @@ const teamData =[
     "role": "Content Team",
     "badge": "Content Creator",
     "year": "2022",
+    "image": "",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -865,8 +941,9 @@ const teamData =[
     "role": "Content Team",
     "badge": "Content Creator",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQFKXRFih3MQLg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718230778246?e=1757548800&v=beta&t=lj5OF_hKod3YhYsLmjviv4Op-Bknv40WFI8JfCZLYtM",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/gaurav-kumar-sen-317093228/",
       "twitter": "",
       "github": ""
     }
@@ -877,6 +954,7 @@ const teamData =[
     "role": "Content Team",
     "badge": "Content Creator",
     "year": "2022",
+    "image": "",
     "social": {
       "linkedin": "",
       "twitter": "",
@@ -889,8 +967,9 @@ const teamData =[
     "role": "Marketing & Sponsorship Team",
     "badge": "Marketing Specialist",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQEvUYOgsMiRTw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1677778037357?e=1757548800&v=beta&t=v4Neb0KDY3FUPuNq3nI9jugdrLtYOyQEJbce0xMbngQ",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/ajityaduv/",
       "twitter": "",
       "github": ""
     }
@@ -901,8 +980,9 @@ const teamData =[
     "role": "Marketing & Sponsorship Team",
     "badge": "Marketing Specialist",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQH6zEmlIQPMOQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1720977519964?e=1757548800&v=beta&t=qFK5_5tEBkFaifzfcjF669--o4bgPK6gNFaH2pUmcWw",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/atulya-vaibhav-pandey/",
       "twitter": "",
       "github": ""
     }
@@ -913,8 +993,9 @@ const teamData =[
     "role": "Marketing & Sponsorship Team",
     "badge": "Marketing Specialist",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQFdWNkaqIgOjw/profile-displayphoto-shrink_800_800/B4DZZsoMBxHwAc-/0/1745579197553?e=1757548800&v=beta&t=XHyclTeOpzCbJPDoe33TBojTn-bMbLYpI2lCth_q-Ws",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/yogeshwarg/",
       "twitter": "",
       "github": ""
     }
@@ -925,8 +1006,9 @@ const teamData =[
     "role": "Event Coordination Team",
     "badge": "Event Coordinator",
     "year": "2022",
+    "image": "",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/aniket310/",
       "twitter": "",
       "github": ""
     }
@@ -937,8 +1019,9 @@ const teamData =[
     "role": "Event Coordination Team",
     "badge": "Event Coordinator",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQGd9qxeIZspxQ/profile-displayphoto-shrink_800_800/B56Zc_15Q3HUAg-/0/1749122783656?e=1757548800&v=beta&t=AFMJcHFjSWifZIyHGp3cOoKZeiUCchdquszp3JfWwnU",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/anjali-gupta2004/",
       "twitter": "",
       "github": ""
     }
@@ -949,21 +1032,22 @@ const teamData =[
     "role": "Event Coordination Team",
     "badge": "Event Coordinator",
     "year": "2022",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQE03LlGCHdhrg/profile-displayphoto-shrink_800_800/B56ZTVSeVzHsAk-/0/1738745179642?e=1757548800&v=beta&t=7nKl6xK0-7tS63zLDgJvGIVCkxWdq3emgVPtYfYnCiI",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/ishita20/",
       "twitter": "",
       "github": ""
     }
   },
-   {
+  {
     "id": 65,
     "name": "Abhay Nandan Singh",
     "role": "Media and CP Executive",
     "badge": "Media Coordinator",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQFQecvBCDalQA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722880310070?e=1757548800&v=beta&t=P3It9AtAFa8qZLI7nf9G_ihET6fjPWYcLOvwoCqLnEU",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/deltath/",
       "twitter": "",
       "github": ""
     }
@@ -974,9 +1058,9 @@ const teamData =[
     "role": "Media and CP Executive",
     "badge": "Content Creator",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/C5603AQGw-kZyDpjF-Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1629031913867?e=1757548800&v=beta&t=jRmW1QJ2IqZmgcZcuBF0HBPj73qPltzfD30k9HfTPFE",
     "social": {
-      "linkedin": "",
+      "linkedin": "http://linkedin.com/in/archana-chaurasiya-4507bb182/",
       "twitter": "",
       "github": ""
     }
@@ -989,7 +1073,7 @@ const teamData =[
     "year": "2021",
     "image": "",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/aradhya08oc01/",
       "twitter": "",
       "github": ""
     }
@@ -1000,9 +1084,9 @@ const teamData =[
     "role": "Media and CP Executive",
     "badge": "Social Media Manager",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQGNok1iff1LVA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725382143110?e=1757548800&v=beta&t=sRg9CUSyTi6R-87hq-hCiKjR-Rz03JrKD6-pXZc3WOE",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/anubhav-agrawal-766b23203/",
       "twitter": "",
       "github": ""
     }
@@ -1010,25 +1094,26 @@ const teamData =[
   {
     "id": 69,
     "name": "Bhaskar Trivedi",
-    "role": "GDG Lead 2022",
+    "role": "GDSC Lead 2022-23",
+    "position": "GDG Lead",
     "badge": "Event Coordinator",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQF63kf4PWc_uw/profile-displayphoto-shrink_800_800/B56Za5YGj0GkAc-/0/1746866825916?e=1757548800&v=beta&t=9CY0f23jV9170qRH1l8tEaOFFmbMeXNj28mc6PBkwrU",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/bhaskart488/",
       "twitter": "",
       "github": ""
     }
   },
   {
     "id": 70,
-    "name": "Aman Kumar Poddar",
+    "name": "Aman Kumar Sonkar",
     "role": "Web, App, and Project Development Executive",
     "badge": "Developer",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQHcnH85mDBoXw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704220429057?e=1757548800&v=beta&t=JpaSeRciklAlqlmy4A60doEeNziPlRInyPNG4AiY4og",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/aman-kumar-sonkar-19b768294/",
       "twitter": "",
       "github": ""
     }
@@ -1039,9 +1124,9 @@ const teamData =[
     "role": "Web, App, and Project Development Executive",
     "badge": "Frontend Developer",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQHiFNPzl1VfzA/profile-displayphoto-shrink_800_800/B56ZWdtF1vHsAc-/0/1742107598890?e=1757548800&v=beta&t=hGGsITaADXajS8kfnClfr0W2CS7QvGbGbS7hFKxcPD0",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/ikchhit-kumar-pandey/",
       "twitter": "",
       "github": ""
     }
@@ -1078,9 +1163,9 @@ const teamData =[
     "role": "Web, App, and Project Development Executive",
     "badge": "Mobile Developer",
     "year": "2021",
-    "image": "",
+    "image": "ata:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/sanjaychaurasiya/",
       "twitter": "",
       "github": ""
     }
@@ -1091,9 +1176,9 @@ const teamData =[
     "role": "Partnership and Outreach Executive",
     "badge": "Outreach Coordinator",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/C4E03AQGCUMMvku5rxg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1590665510400?e=1757548800&v=beta&t=p5OVmTpI4jF78CojgfzFvwzzjwSRSE0Uk1-sqVHlUtE",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/shivam-26/",
       "twitter": "",
       "github": ""
     }
@@ -1104,9 +1189,9 @@ const teamData =[
     "role": "Partnership and Outreach Executive",
     "badge": "Partnership Manager",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/D4E03AQGgcBwG6jpx0A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724088241996?e=1757548800&v=beta&t=Gy3oxYWBLswPkP2LqVAlgtInWCIt1dsmM5vwXqEzT5I",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/aryan-singh-b16856323/",
       "twitter": "",
       "github": ""
     }
@@ -1117,9 +1202,9 @@ const teamData =[
     "role": "Partnership and Outreach Executive",
     "badge": "Sponsor Manager",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/D4D03AQFATAwSKy60AA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690006759945?e=1757548800&v=beta&t=dqJVNFo3RVSfFktion8Wp0f8MpIEqv1-DTpBVaS4i4U",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/prehansgupta2024/",
       "twitter": "",
       "github": ""
     }
@@ -1130,9 +1215,9 @@ const teamData =[
     "role": "Partnership and Outreach Executive",
     "badge": "Networking Coordinator",
     "year": "2021",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/C5603AQHfFuxewLBFjA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1629313648719?e=1757548800&v=beta&t=D9KPGO6e8PuME4blpoK95gi-uEuWMN_0akIeRKJuQxI",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/rivadiwan/",
       "twitter": "",
       "github": ""
     }
@@ -1143,49 +1228,50 @@ const teamData =[
     "role": "Partnership and Outreach Executive",
     "badge": "Marketing Lead",
     "year": "2021",
-    "image": "",
+    "image": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/khushi-singh-4b2a67210/",
       "twitter": "",
       "github": ""
     }
   },
-   {
+  {
     "id": 80,
     "name": "Abhinash Kumar yadav",
-    "role": "GDG Lead 2021",
+    "role": "GDSC Lead 2021-22",
+    "position": "GDG Lead",
     "badge": "",
     "year": "2020",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/C5603AQEdpCMAB2xBAg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1643278288113?e=1757548800&v=beta&t=XRyr5elXBa4Mi2-kuiwlx8U5Or6bmn-KdJhQcKA2LrI",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/ralphcoder/",
       "twitter": "",
       "github": ""
     }
   },
-     {
+  {
     "id": 81,
     "name": "Abhishek Kumar yadav",
-    "role": "GDG Lead 2020",
+    "role": "GDSC Lead 2020-21",
+    "position": "GDG Lead",
     "badge": "",
     "year": "2019",
-    "image": "",
+    "image": "https://media.licdn.com/dms/image/v2/D4E03AQFFOECK34TaNw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680548440584?e=1757548800&v=beta&t=NfrK9hoWLoyS0UkTU-4bjdjVUYrGukRiL2R_oq5smSQ",
     "social": {
-      "linkedin": "",
+      "linkedin": "https://www.linkedin.com/in/abhishek-kumar-yadav-82a751270/",
       "twitter": "",
       "github": ""
     }
   }
-]
-;
+];
 
 export default function Team() {
-  const {fileUrl}=useAuth();
-  const [upload,setUpload]=useState(false);
-  const [selectedYear,setSelectedYear]=useState("GDG Lead");
+  const { fileUrl } = useAuth();
+  const [upload, setUpload] = useState(false);
+  const [selectedYear, setSelectedYear] = useState("GDG Lead");
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.1 });
-  
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -1208,120 +1294,126 @@ export default function Team() {
   function handleUpload() {
     setUpload(true);
   }
-const filteredMembers = selectedYear.includes( 'GDG Lead')? teamData.filter(member=>member.role.includes("GDG Lead")) : teamData.filter(member => member.year === selectedYear);
-console.log("fileUrll",fileUrl)
+  const filteredMembers = selectedYear?.includes('GDG Lead') ? teamData.filter(member => member?.position?.includes("GDG Lead")) : teamData?.filter(member => member?.year === selectedYear);
+  console.log("fileUrll", fileUrl)
+  console.log("filtered member", filteredMembers)
 
   return (
     <>
-    <TeamSectionContainer id="team" className="animate-section">
-      <SectionContent ref={sectionRef}>
-        <SectionHeader>
-          <SectionTitle>Our Team</SectionTitle>
-          <SectionDescription>
-            Meet the passionate individuals who make GDG MMMUT possible. Our team is dedicated to fostering a vibrant tech community and organizing impactful events.
-          </SectionDescription>
-        </SectionHeader>
-        <FilterContainer>
-            <FilterButton 
-          active={selectedYear==="GDG Lead"} 
-          onClick={() => setSelectedYear('GDG Lead')}
-        >
-          All Leads
-        </FilterButton>
-        <FilterButton 
-          active={selectedYear === '2024'} 
-          onClick={() => setSelectedYear('2024')}
-        >
-          2024
-        </FilterButton>
-        <FilterButton 
-          active={selectedYear === '2023'} 
-          onClick={() => setSelectedYear('2023')}
-        >
-          2023
-        </FilterButton>
-        <FilterButton 
-          active={selectedYear === '2022'} 
-          onClick={() => setSelectedYear('2022')}
-        >
-          2022
-        </FilterButton>
-        <FilterButton 
-          active={selectedYear === '2021'} 
-          onClick={() => setSelectedYear('2021')}
-        >
-          2021
-        </FilterButton>
-        </FilterContainer>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          <TeamGrid>
-            {filteredMembers?.map((member) => (
-              <TeamMemberCard key={member.id} variants={itemVariants}>
-                <MemberImage>
-                  <img src={member?.image} alt={member.name} />
-                  <button onClick={handleUpload}>Upload</button>
-                </MemberImage>
-                
-                <MemberContent>
-                  <RoleBadge $role={member.badge}>
-                    {member.badge.charAt(0).toUpperCase() + member.badge.slice(1)}
-                  </RoleBadge>
-      
-                  <MemberName>{member.name}</MemberName>
-                  <MemberRole>{member.role}</MemberRole>
-                  <SocialLinks>
-                    <SocialLink 
-                      href={member.social.linkedin}
-                      target="_ blank"
-                      whileHover={{ y: -3 }}
-                      aria-label={`${member.name}'s LinkedIn`}
-                  >
-                      <i className="fab fa-linkedin"><FaLinkedin /></i>
-                    </SocialLink>
-                    <SocialLink 
-                      href={member.social.twitter}
-                      target="_blank"
-                      whileHover={{ y: -3 }}
-                      aria-label={`${member.name}'s Twitter`}
-                    >
-                      <i className="fab fa-twitter"><FaTwitter /></i>
-                    </SocialLink>
-                    <SocialLink 
-                      href={member.social.github}
-                      target="_blank"
-                      whileHover={{ y: -3 }}
-                      aria-label={`${member.name}'s GitHub`}
-                    >
-                      <i className="fab fa-github"><FaGit /></i>
-                    </SocialLink>
-                  </SocialLinks>
-                </MemberContent>
-              </TeamMemberCard>
-            ))}
-          </TeamGrid>
-        </motion.div>
-      </SectionContent>
-    </TeamSectionContainer>
-      {upload &&<motion.div style={{
-  position: "fixed",
-  top: "0",
-  left: "0",
-  right: "0",
-  bottom: "0",
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
-  backdropFilter: "blur(5px)",
-  display: "flex",
-  justifyContent:" center",
-  alignItems: "center",
-  zIndex: "1000"
-}}
->
-      <Uploadbox setUpload={setUpload} />
-     </motion.div>}
+      <TeamSectionContainer id="team" className="animate-section">
+        <SectionContent ref={sectionRef}>
+          <SectionHeader>
+            <SectionTitle>Our Team</SectionTitle>
+            <SectionDescription>
+              Meet the passionate individuals who make GDG MMMUT possible. Our team is dedicated to fostering a vibrant tech community and organizing impactful events.
+            </SectionDescription>
+          </SectionHeader>
+          <FilterContainer>
+            <FilterButton
+              active={selectedYear === "GDG Lead"}
+              onClick={() => setSelectedYear('GDG Lead')}
+            >
+              Our Leads
+            </FilterButton>
+            <FilterButton
+              active={selectedYear === '2024'}
+              onClick={() => setSelectedYear('2024')}
+            >
+              2024
+            </FilterButton>
+            <FilterButton
+              active={selectedYear === '2023'}
+              onClick={() => setSelectedYear('2023')}
+            >
+              2023
+            </FilterButton>
+            <FilterButton
+              active={selectedYear === '2022'}
+              onClick={() => setSelectedYear('2022')}
+            >
+              2022
+            </FilterButton>
+            <FilterButton
+              active={selectedYear === '2021'}
+              onClick={() => setSelectedYear('2021')}
+            >
+              2021
+            </FilterButton>
+          </FilterContainer>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            <TeamGrid>
+              {filteredMembers?.map((member) => (
+                <TeamMemberCard key={member.id} variants={itemVariants}>
+                  <MemberImage>
+                    <img src={member?.image} alt={member.name} />
+                    <button onClick={handleUpload}>Upload</button>
+                  </MemberImage>
+
+                  <MemberContent>
+                    <>
+                      {
+                        selectedYear != 'GDG Lead' ? <><RoleBadge $role={member.badge}>
+                          {member.badge.charAt(0).toUpperCase() + member.badge.slice(1)}
+                        </RoleBadge></> :
+                          <></>
+                      }
+                    </>
+
+                    <MemberName>{member.name}</MemberName>
+                    <MemberRole>{member.role}</MemberRole>
+                    <SocialLinks>
+                      <SocialLink
+                        href={member.social.linkedin}
+                        target="_ blank"
+                        whileHover={{ y: -3 }}
+                        aria-label={`${member.name}'s LinkedIn`}
+                      >
+                        <i className="fab fa-linkedin"><FaLinkedin /></i>
+                      </SocialLink>
+                      <SocialLink
+                        href={member.social.twitter}
+                        target="_blank"
+                        whileHover={{ y: -3 }}
+                        aria-label={`${member.name}'s Twitter`}
+                      >
+                        <i className="fab fa-twitter"><FaTwitter /></i>
+                      </SocialLink>
+                      <SocialLink
+                        href={member.social.github}
+                        target="_blank"
+                        whileHover={{ y: -3 }}
+                        aria-label={`${member.name}'s GitHub`}
+                      >
+                        <i className="fab fa-github"><FaGit /></i>
+                      </SocialLink>
+                    </SocialLinks>
+                  </MemberContent>
+                </TeamMemberCard>
+              ))}
+            </TeamGrid>
+          </motion.div>
+        </SectionContent>
+      </TeamSectionContainer>
+      {upload && <motion.div style={{
+        position: "fixed",
+        top: "0",
+        left: "0",
+        right: "0",
+        bottom: "0",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backdropFilter: "blur(5px)",
+        display: "flex",
+        justifyContent: " center",
+        alignItems: "center",
+        zIndex: "1000"
+      }}
+      >
+        <Uploadbox setUpload={setUpload} />
+      </motion.div>}
     </>
   );
 };
