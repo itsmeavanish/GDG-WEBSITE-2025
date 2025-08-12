@@ -49,6 +49,7 @@ const HeaderContainer = styled(motion.header)`
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-bottom:0.5px solid #2A3439;
   background-color: ${(props) =>
     props.$scrolled ? props.theme.colors.background.primary : 'transparent'};
   box-shadow: ${(props) =>

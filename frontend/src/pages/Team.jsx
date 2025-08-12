@@ -1252,11 +1252,11 @@ const teamData = [
   {
     "id": 81,
     "name": "Abhishek Kumar yadav",
-    "role": "GDSC Lead 2020-21",
+    "role": "DSC Lead 2020-21",
     "position": "GDG Lead",
     "badge": "",
     "year": "2019",
-    "image": "https://media.licdn.com/dms/image/v2/D4E03AQFFOECK34TaNw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1680548440584?e=1757548800&v=beta&t=NfrK9hoWLoyS0UkTU-4bjdjVUYrGukRiL2R_oq5smSQ",
+    "image": "https://media.licdn.com/dms/image/v2/D5603AQGR47E75vz5tw/profile-displayphoto-shrink_800_800/B56ZU96AK5GQAo-/0/1740500370837?e=1758153600&v=beta&t=nmy2_9X_ll1Te1rggSoyeXR9ngBIHxso1AZ_LEtpO6Y",
     "social": {
       "linkedin": "https://www.linkedin.com/in/abhishek-kumar-yadav-82a751270/",
       "twitter": "",
